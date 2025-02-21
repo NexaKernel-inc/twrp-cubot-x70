@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Usa la versión más reciente de actions/checkout
 
       - name: Set up environment
         run: |
@@ -35,7 +35,7 @@ jobs:
           mka vendorbootimage -j$(nproc --all)
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4  # Usa la versión v4 o superior
+        uses: actions/upload-artifact@v4  # Usa la versión más reciente
         with:
           name: twrp-image
           path: twrp/out/target/product/X70/vendor_boot.img  # Cambia "X70" por el nombre de tu dispositivo
